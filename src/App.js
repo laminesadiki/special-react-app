@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PremierComposant from "./components/PremierComposant/PremierComposant";
+import Card from "./components/Card/Card";
+import { phones } from "./phones";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App grid-container">
+      {phones.map((phone) => (
+        <Card title={phone.title} img={phone.img} price={phone.price} />
+      ))}
     </div>
   );
 }
